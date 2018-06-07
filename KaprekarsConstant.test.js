@@ -1,6 +1,6 @@
 const KaprekarsConstant = require('./KaprekarsConstant');
 
-test.only('Calculates the number of routines until 6174', () => {
+test('Calculates the number of routines until 6174', () => {
   expect(KaprekarsConstant(3524)).toBe(3);
   expect(KaprekarsConstant(6174)).toBe(1);
   expect(KaprekarsConstant(6175)).toBe(7);
