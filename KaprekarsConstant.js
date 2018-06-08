@@ -24,8 +24,35 @@ function KaprekarsConstant(num) {
   }
 }
 
-// function KaprekarsConstant () {
-//   return 'test'
+//jordis solution
+// function KaprekarsConstant (number) {
+//     if (number === 0) return null;
+//     var num = 0;
+//     let minMax = parseInt(number.toString().split('').sort().join('')) //?
+//     const Kapri = 6174;
+//     let maxMin = parseInt(number.toString().split('').sort().reverse().join('')); //?
+//     if (maxMin - minMax === Kapri) {
+//       return 1;
+//     } else {
+//       num++
+//       return num + KaprekarsConstant(maxMin-minMax);
+//     }
+//   }
+
+//Marlon's solution
+// function KaprekarsConstant (value) {
+//   if(!value || value < 1000) return null;
+//   let iterations = 0;
+//   function calculate(value) {
+//     iterations++;
+//     const min = Number(value.toString().split('').sort().join(''));
+//     const max = Number(value.toString().split('').sort((a, b)=> b - a).join(''));
+//     if(max - min != 6174) return calculate(max - min);
+//     return iterations;
+//   }
+//   return calculate(value);
 // }
+
+
 
 module.exports = KaprekarsConstant;

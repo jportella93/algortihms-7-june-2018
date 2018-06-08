@@ -76,8 +76,71 @@ function Caesars(string, step) {
   return res
 }
 
-// function Caeasars () {
-//   return 'test'
+// Jordi's solution
+// function Caesars (string, step) {
+//
+//   let message = '';
+//   let numChar = [];
+//   let finalMessage = [];
+//   message = string.split('') //?
+//
+//   for (let i = 0; i < message.length; i++) {
+//     if (message[i]  === ' ') {
+//       numChar.push(0);
+//     } else {
+//       numChar.push(Caesar[message[i]]);
+//     }
+//
+//   }
+//   for (let i = 0; i < numChar.length; i++) {
+//     if (numChar[i] !== 0) {
+//       numChar[i] = numChar[i] - step
+//       if (numChar[i] < 0) {
+//         numChar[i] += 26;
+//       }
+//       if (numChar[i] < 0) {
+//         numChar[i] += 26;
+//       }
+//     } else {
+//       numChar[i];
+//     }
+//   }
+//
+//   for (let i = 0; i < numChar.length; i++) {
+//     if (numChar[i] == 0) {
+//       finalMessage.push(' ')
+//     }
+//     finalMessage.push(Julius[numChar[i]]);
+//
+//   }
+//   return finalMessage.join('');
 // }
+
+// David's solution
+// function Caesars(string, step) {
+//   step = step%26;
+//   const strArr = Array.from(string);
+//
+//   const numArr = strArr.map(el => {
+//     if(el === ' ') return ' '
+//     return Caesar[el];
+//     })
+//   const shiftArr = numArr.map(el => {
+//     if(el === ' ') return ' ';
+//     const res = el-step;
+//     if (res<1) return res + 26
+//     return res;
+//   })
+//   const decArr = shiftArr.map(el => {
+//     if (el === ' ') return ' ';
+//     return Julius[el];
+//   })
+//
+//   return decArr.join('');
+// }
+
+// Marco's one liner (without edge cases)
+// const Caesars = (str, step) => str.split('').map(c => String.fromCharCode(c.charCodeAt(0) + step)).join('');
+
 
 module.exports = Caesars;
